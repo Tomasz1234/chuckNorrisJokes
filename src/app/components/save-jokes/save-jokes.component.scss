@@ -11,7 +11,11 @@
   flex-grow: 1;
   align-items: center;
   justify-content: space-around;
+    border-radius: 10px;
+
 }
+
+
 
 img{
     width: 24px;
@@ -35,10 +39,22 @@ button {
   justify-content: center;
   height: 58px;
   border: none;
+  border-radius: 10px;
   outline: none;
   flex-grow: 5;
   cursor: pointer;
   padding: 10px;
+}
+
+.error{
+  background-color: var(--red-error);
+}
+
+.errorMessage{
+  top: 50px;
+  color: var(--red-error);
+  width: 100%;
+  text-align: left;
 }
 
 @media only screen and (max-width: 600px) {

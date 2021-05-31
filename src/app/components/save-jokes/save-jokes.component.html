@@ -1,12 +1,15 @@
 <div class="container">
-  <div class="changeAmount">
-    <button (click)="amount = amount - 1">
+  <div class="changeAmount" [ngClass]="jokesOverload ? 'error' : ''">
+    <button (click)="decreaseAmount()" [ngClass]="jokesOverload ? 'error' : ''">
       <img src="../../../assets/minus.png" alt="" />
     </button>
     <p>{{ amount }}</p>
-    <button (click)="amount = amount + 1">
+    <button (click)="increaseAmount()" [ngClass]="jokesOverload ? 'error' : ''">
       <img src="../../../assets/plus.png" alt="" />
     </button>
   </div>
   <button class="saveButton" (click)="saveJokes()">Save Jokes</button>
 </div>
+<p class="errorMessage" *ngIf="jokesOverload">
+  You can pick a number from 1 to 100.
+</p>

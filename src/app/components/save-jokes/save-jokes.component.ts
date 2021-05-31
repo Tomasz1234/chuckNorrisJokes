@@ -25,6 +25,7 @@ export class SaveJokesComponent implements OnInit {
   jokeList: JokeList;
   amount: number = 0;
   jokes: string = '';
+  jokesOverload: boolean = false;
 
   constructor(private httpClient: HttpClient) { };
 
@@ -42,11 +43,34 @@ saveJokes() {
           this.jokes = this.jokes.concat(joke.joke+"\n");
           
         })
-        if(this.amount>0){
+        if(this.amount>0 && this.amount<=100){
         const blob = new Blob([this.jokes],{type: "text/plain;charset=utf-8"})
           saveAs(blob, "chuck-norris-jokes.txt");
         }
       }
     )
+  }
+
+  decreaseAmount(){
+    this.amount = this.amount - 1;
+    if(this.amount <= 0){
+      this.amount=0
+    }
+    if(this.amount >= 100){
+      this.jokesOverload = true;
+    }
+    else{
+      this.jokesOverload = false;
+    }
+  }
+
+  increaseAmount(){
+    this.amount = this.amount + 1;
+    if(this.amount >= 100){
+      this.jokesOverload = true;
+    }
+    else{
+      this.jokesOverload = false;
+    }
   }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'chuckNorrisJokes';
+ Message:string;
+ isImpersonated:boolean = false;
+
+    receiveMessage($event) {  
+        this.Message = $event  
+        if(this.Message != ''){
+          this.isImpersonated = true;
+        }
+        else{
+          this.isImpersonated = false;
+        }
+    }
+
+
 }

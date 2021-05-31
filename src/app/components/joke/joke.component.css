@@ -1,23 +1,31 @@
-
-.container{
-    display: flex;
-    flex-direction: column;
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .joke {
   color: var(--dark);
   font-size: 18px;
   font-weight: 600;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   text-align: justify;
   font-style: italic;
   width: 100%;
   min-height: 10ex;
 }
-
-
 
 .btn {
   width: 100%;
@@ -31,23 +39,15 @@
   font-size: 16px;
 }
 
-.option{
-  text-transform: capitalize;
-}
-
-::ng-deep span{
-  text-transform: capitalize;
-}
-
 @media only screen and (max-width: 600px) {
   .btn,
   .selectCategory {
     border-radius: 0;
   }
-
   .joke {
     padding: 10px;
     font-size: 0.9rem;
     min-height: 12ex;
   }
 }
+/*# sourceMappingURL=joke.component.css.map */

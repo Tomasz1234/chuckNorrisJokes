@@ -11,8 +11,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { JokeComponent } from './components/joke/joke.component';
-import { FormsComponent } from './components/forms/forms.component';
-import { CockpitComponent } from './components/cockpit/cockpit.component';
 import { SaveJokesComponent } from './components/save-jokes/save-jokes.component';
 
 @NgModule({
@@ -20,8 +18,6 @@ import { SaveJokesComponent } from './components/save-jokes/save-jokes.component
     AppComponent,
     HeaderComponent,
     JokeComponent,
-    FormsComponent,
-    CockpitComponent,
     SaveJokesComponent
   ],
   imports: [

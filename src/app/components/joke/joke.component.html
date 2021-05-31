@@ -1,1 +1,46 @@
-<p>joke works!</p>
+<div class="container">
+  <p class="joke">{{ joke.value.joke }}</p>
+  <mat-form-field appearance="outline">
+    <mat-label>Select Category</mat-label>
+
+    <mat-select
+      placeholder="Categories"
+      [(ngModel)]="selectedCategory"
+      name="selectCategory"
+      class="selectCategory"
+    >
+      <mat-option
+        *ngFor="let category of categories"
+        [value]="category"
+        class="option"
+      >
+        {{ category }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Impersonate Chuck Norris</mat-label>
+    <input
+      matInput
+      class="impersonate"
+      [value]=""
+      name="selectName"
+      type="text"
+      [(ngModel)]="selectedName"
+      (keyup)="sendMessage($event)"
+    />
+  </mat-form-field>
+  <button
+    *ngIf="!selectedName; else norrisButton"
+    type="button"
+    class="btn"
+    (click)="randomJoke()"
+  >
+    Draw a random Chuck Norris Joke
+  </button>
+  <ng-template #norrisButton>
+    <button type="button" class="btn" (click)="randomJoke()">
+      Draw a random {{ selectedName }} Joke
+    </button>
+  </ng-template>
+</div>

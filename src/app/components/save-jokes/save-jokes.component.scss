@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+
+  margin-top: 52px;
+}
+
+.changeAmount {
+  display: flex;
+  background-color: var(--greyButton);
+  margin-right: 5px;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: space-around;
+}
+
+img{
+    width: 24px;
+}
+
+i,
+p {
+  padding: 10px;
+  width: 40px;
+  text-align: center;
+}
+
+i {
+  cursor: pointer;
+}
+
+button {
+  background-color: var(--greyButton);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 58px;
+  border: none;
+  outline: none;
+  flex-grow: 5;
+  cursor: pointer;
+  padding: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+  .changeAmount {
+    margin-right: 0;
+  }
+  .saveButton{
+    margin-top: 10px;
+  }
+}

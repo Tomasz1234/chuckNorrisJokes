@@ -1,3 +1,10 @@
 <div class="container">
-  <img src="../../../assets/chuck.png" alt="Chuck Norris" />
+  <img
+    *ngIf="!isImpersonated; else randomImg"
+    src="../../../assets/chuck.png"
+    alt="Chuck Norris"
+  />
+  <ng-template #randomImg>
+    <img src="../../../assets/random.png" alt="Impersonated Chuck Norris" />
+  </ng-template>
 </div>

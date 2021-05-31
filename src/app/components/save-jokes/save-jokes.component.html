@@ -1,1 +1,12 @@
-<p>save-jokes works!</p>
+<div class="container">
+  <div class="changeAmount">
+    <button (click)="amount = amount - 1">
+      <img src="../../../assets/minus.png" alt="" />
+    </button>
+    <p>{{ amount }}</p>
+    <button (click)="amount = amount + 1">
+      <img src="../../../assets/plus.png" alt="" />
+    </button>
+  </div>
+  <button class="saveButton" (click)="saveJokes()">Save Jokes</button>
+</div>
